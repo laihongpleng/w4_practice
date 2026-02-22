@@ -1,5 +1,6 @@
 //C:\Users\DELL\Documents\Cadt\cadty3t2\Flutter\another\w4\w4practice\lib\2_download_app\ui\screens\downloads\downloads_screen.dart
 import 'package:flutter/material.dart';
+import 'package:w4practice/2_download_app/ui/screens/downloads/widgets/download_tile.dart';
 import '../../providers/theme_color_provider.dart';
 import '../../theme/theme.dart';
 import 'widgets/download_controler.dart';
@@ -42,6 +43,13 @@ class DownloadsScreen extends StatelessWidget {
               SizedBox(height: 50),
 
               // TODO - Add the Download tiles
+              Expanded(
+                child: ListView(
+                  children: controllers
+                      .map((controller) => DownloadTile(controller: controller))
+                      .toList(),
+                ),
+              ),
             ],
           ),
         );
